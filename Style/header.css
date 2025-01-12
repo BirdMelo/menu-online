@@ -1,0 +1,32 @@
+@import url('./logo.css');
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0rem;
+    padding-top: 32px;
+    background-color: var(--bg-box-color);
+    position: relative;
+}
+#logo {
+    position: absolute;
+    inset: 5px auto auto 50%;
+    transform: translate(-50%);
+}
+#search {
+    display: flex;
+    position: relative;
+}
+#search_snack {
+    background-color: var(--bg-body-color);
+    border: 1px solid var(--borders-color);
+    padding: 0.1rem 0.5rem;
+    padding-right: 1.3rem;
+    border-radius: 4px;
+}
+#search img {
+    width: 1.2rem;
+    position: absolute;
+    inset: 0px 0px auto auto;
+}

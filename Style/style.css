@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+@import url('./header.css');
+@import url('./main.css');
+
+:root {
+    --standart-font: Arial, sans-serif;
+    --logo-font: 'Kalam', cursive;
+    --bg-body-color: #dfdfdf;
+    --bg-box-color: white;
+    --borders-color: black;
+    --hightlight-text-color: orange;
+    --bg-button-color: #642c2c;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--standart-font);
+    background-color: var(--bg-body-color);
+}
+button {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--borders-color);
+    border-radius: 4px;
+    font-weight: 600;
+    color: var(--bg-box-color);
+    background-color: var(--bg-button-color);
+    text-transform: uppercase;
+}
