@@ -1,8 +1,61 @@
 footer {
     position:fixed;
-    inset: auto auto 0 0;
+    top: 1020px;
     background-color: var(--bg-box-color);
     width: 100%;
-    padding: 0.5rem 0;
-    border-radius: 16px 16px 0 0;
+    height: 80%;
+    padding: 14px 22px;
+    border-radius: 16px;
+    transition: top 0.5s ease;
+}
+footer.expanded {
+    top: 160px;
+}
+
+#navbar_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer_slash {
+    width: 105%;
+    border: none;
+    background-color: var(--highlight-color);
+    height: 2px;
+}
+#shopping_bag {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+    max-height: 650px;
+    overflow-y: auto;
+}
+#shopping_bag li{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 5px;
+}
+.item_name {
+    grid-column: 1;
+}
+.item_price {
+    grid-column: 3;
+}
+.item_dots {
+    grid-column: 2;
+    border: none;
+    border-bottom: 2px dotted var(--borders-color); /* Cria a linha de bolinhas */
+    height: 1px;
+    width: 100%;
+
+}
+
+#total_price {
+    align-self: end;
+}
+#finish_order {
+    position: absolute;
+    inset: auto auto 15px auto;
 }

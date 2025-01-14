@@ -6,6 +6,7 @@
     <title>Menu Online</title>
     <link rel="icon" href="./img/pizza-icon.png">
     <link rel="stylesheet" href="./Style/style.css">
+    <script src="./script/script.js" type="module" defer></script>
 </head>
 <body>
     <header>
@@ -45,10 +46,24 @@
     </aside>
     <footer>
         <nav class="nav_buttons" id="navbar_footer">
-            <button id="pizzas">destaques</button>
-            <button id="pizzas">pizza</button>
-            <button id="beverages">bebidas</button>
-            <button id="other_dishes">outros</button>
+            <button id="shopping_bag__button" ><img src="./img/shopping_bag.png" alt="lista de compra">lista de compras</button>
+            <hr class="footer_slash">
+            <ul id="shopping_bag">
+                <li>
+                    <p class="item_name">pizza napolitana</p>
+                    <hr class="item_dots">
+                    <p class="item_price">R$30,00</p>
+                </li>
+                <li>
+                    <p class="item_name">pizza margherita</p>
+                    <hr class="item_dots">
+                    <p class="item_price">R$28,00</p>
+                </li>
+            </ul>
+            <hr class="footer_slash">
+            <p id="total_price">Total: R$ 200,00</p>
+            <button id="finish_order">finalizar pedido</button>
+
         </nav>
     </footer>
 </body>

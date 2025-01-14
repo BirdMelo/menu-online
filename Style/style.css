@@ -10,8 +10,8 @@
     --bg-body-color: #dfdfdf;
     --bg-box-color: white;
     --borders-color: black;
-    --hightlight-text-color: orange;
-    --bg-button-color: #642c2c;
+    --highlight-color: #642c2c;
+    --highlight-text-color: orange;
 }
 *{
     margin: 0;
@@ -22,7 +22,7 @@
 body {
     font-family: var(--standart-font);
     background-color: var(--bg-body-color);
-    margin: 3rem 0;
+    margin: 4rem 0 3rem 0;
 }
 button {
     padding: 0.4rem 0.8rem;
@@ -30,8 +30,11 @@ button {
     border-radius: 4px;
     font-weight: 600;
     color: var(--bg-box-color);
-    background-color: var(--bg-button-color);
+    background-color: var(--highlight-color);
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 .nav_buttons {
     display: flex;

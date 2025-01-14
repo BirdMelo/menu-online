@@ -5,13 +5,13 @@ main {
     gap: 1rem;
 }
 #navbar_main {
-    display: none;
+    display: flex;
 }
 main h2 {
     font-family: var(--logo-font);
     text-align: center;
     font-weight: 600;
-    color: var(--bg-button-color);
+    color: var(--highlight-color);
     font-size: 2rem;
     text-shadow: 
     -1px -1px 0 #000,
@@ -41,7 +41,7 @@ main ul li img {
 #dish_name {
     font-family: var(--logo-font);
     text-transform: uppercase;
-    color: var(--hightlight-text-color);
+    color: var(--highlight-text-color);
     font-weight: 700;
     font-size: 1.2rem;
     text-shadow: 
