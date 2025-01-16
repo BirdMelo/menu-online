@@ -1,0 +1,25 @@
+{
+    "menu": [
+        {
+            "name": "pizza margherita",
+            "price": 30.0,
+            "img": "../img/snack_pic/pizza_napolitana.png",
+            "description": "pizza de massa napolitana. Sua cobertura é molho de tomate, queijo mussarela e folhas de oregano",
+            "type": "pizza"
+        },
+        {
+            "name": "pizza portuguesa",
+            "price": 28.9,
+            "img": "../img/snack_pic/pizza_portuguesa.png",
+            "description": "pizza de massa fina, borda alta e crocante. Sua cobertura é molho de tomate, queijo mussarela e folhas de oregano",
+            "type": "pizza"
+        },
+        {
+            "name": "coca-cola",
+            "price": 8.0,
+            "img": "../img/snack_pic/Coca_Cola.jpeg",
+            "description": "pizza de massa fina, borda alta e crocante. Sua cobertura é molho de tomate, queijo mussarela e folhas de oregano",
+            "type": "bebida"
+        }
+    ]
+}
