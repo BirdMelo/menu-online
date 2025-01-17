@@ -23,8 +23,10 @@ main h2 {
 main ul {
     display: flex;
     flex-direction: column;
-    margin: 0.5rem;
+    margin: 0.5rem auto;
     gap: 0.5rem;
+    flex-wrap: wrap;
+
 }
 
 main ul li {
@@ -34,9 +36,10 @@ main ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 490px;
 }
 main ul li img {
-    width: 100%;
+    max-height: 260px;
 }
 #dish_name {
     font-family: var(--logo-font);
@@ -49,4 +52,9 @@ main ul li img {
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+.button_product_container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }

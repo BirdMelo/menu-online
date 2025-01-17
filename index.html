@@ -6,6 +6,7 @@
     <title>Menu Online</title>
     <link rel="icon" href="./img/pizza-icon.png">
     <link rel="stylesheet" href="./Style/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./script/script.js" type="module" defer></script>
 </head>
 <body>
@@ -15,55 +16,27 @@
             <img src="./img/search.svg" alt="lupa">
         </div>
     </header>
+    <aside id="shopping_bag__aside">
+        <button id="shopping_bag__aside__button" ><img src="./img/shopping_bag.png" alt="lista de compra">lista de compras</button>
+    </aside>
     <main>
         <nav class="nav_buttons" id="navbar_main">
-            <button id="pizzas">destaques</button>
-            <button id="pizzas">pizza</button>
+            <button id="highlights">destaques</button>
+            <button id="pizzas">pizzas</button>
             <button id="beverages">bebidas</button>
-            <button id="other_dishes">outros</button>
+            <button id="others">outros</button>
         </nav>
         <h2>Destaques</h2>
-        <ul id="list">
-            <li>
-                <img src="./img/snack_pic/pizza_napolitana.png" alt="pizza napolitana">
-                <p id="dish_name">pizza napolitana</p>
-                <button>adicionar</button>
-            </li>
-            <li>
-                <img src="./img/snack_pic/pizza_napolitana.png" alt="pizza napolitana">
-                <p id="dish_name">pizza napolitana</p>
-                <button>adicionar</button>
-            </li>
-            <li>
-                <img src="./img/snack_pic/pizza_napolitana.png" alt="pizza napolitana">
-                <p id="dish_name">pizza napolitana</p>
-                <button>adicionar</button>
-            </li>
-        </ul>
+        <ul id="list"></ul>
     </main>
-    <aside>
-
-    </aside>
     <footer>
         <nav class="nav_buttons" id="navbar_footer">
-            <button id="shopping_bag__button" ><img src="./img/shopping_bag.png" alt="lista de compra">lista de compras</button>
+            <button id="shopping_bag__footer__button" ><img src="./img/shopping_bag.png" alt="lista de compra">lista de compras</button>
             <hr class="footer_slash">
-            <ul id="shopping_bag">
-                <li>
-                    <p class="item_name">pizza napolitana</p>
-                    <hr class="item_dots">
-                    <p class="item_price">R$30,00</p>
-                </li>
-                <li>
-                    <p class="item_name">pizza margherita</p>
-                    <hr class="item_dots">
-                    <p class="item_price">R$28,00</p>
-                </li>
-            </ul>
+            <ul id="shopping_bag"></ul>
             <hr class="footer_slash">
             <p id="total_price">Total: R$ 200,00</p>
             <button id="finish_order">finalizar pedido</button>
-
         </nav>
     </footer>
 </body>

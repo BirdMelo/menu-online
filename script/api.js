@@ -1,4 +1,3 @@
-import axios from 'axios'
 const DATA_BASE = 'http://localhost:3001/'
 
 const api = {

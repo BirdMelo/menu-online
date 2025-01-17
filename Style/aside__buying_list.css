@@ -1,0 +1,16 @@
+#shopping_bag__aside {
+    position: fixed;
+    height: 80vh;
+    width: 50vw;
+    inset: auto auto auto 1vw;
+    background-color: var(--bg-box-color);
+}
+
+#shopping_bag__aside__button {
+    position: absolute;
+    transform: rotate(90deg);
+    inset: 25vh -105px auto auto;
+    border-radius: 16px;
+    padding-bottom: 0.8rem;
+    padding-top: 0.2rem;
+}
