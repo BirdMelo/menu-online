@@ -37,8 +37,48 @@ button {
     align-items: center;
     gap: 5px;
 }
-.nav_buttons {
+.shopping_bag {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+    max-height: 650px;
+    overflow-y: auto;
+}
+.shopping_bag li{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 5px;
+}
+.navbar_bag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 1rem;
+}
+.bag_slash {
+    width: 105%;
+    border: none;
+    background-color: var(--highlight-color);
+    height: 2px;
+}
+.total_price {
+    align-self: end;
+}
+.finish_order {
+    position: absolute;
+    inset: auto auto 15px auto;
+}
+
+@media screen and (min-width: 786px) {
+    body {
+        margin: 0;
+    }
+}
+@media screen and (max-width: 376px) {
+    button {
+        font-size: 0.6rem;
+    }
 }

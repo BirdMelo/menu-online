@@ -17,26 +17,35 @@
         </div>
     </header>
     <aside id="shopping_bag__aside">
-        <button id="shopping_bag__aside__button" ><img src="./img/shopping_bag.png" alt="lista de compra">lista de compras</button>
+        <nav class="navbar_bag" id="navbar_bag__main">
+            <button id="shopping_bag__aside__button" ><img src="./img/shopping_bag.png" alt="lista de compra">lista de compras</button>
+            <hr class="bag_slash">
+            <ul class="shopping_bag"></ul>
+            <hr class="bag_slash">
+            <p class="total_price">Total: </p>
+            <button class="finish_order">finalizar pedido</button>
+        </nav>
     </aside>
     <main>
-        <nav class="nav_buttons" id="navbar_main">
+        <nav class="nav_buttons">
             <button id="highlights">destaques</button>
             <button id="pizzas">pizzas</button>
             <button id="beverages">bebidas</button>
             <button id="others">outros</button>
         </nav>
-        <h2>Destaques</h2>
-        <ul id="list"></ul>
+        <section class="products">
+            <h2>Destaques</h2>
+            <ul id="list"></ul>
+        </section>
     </main>
-    <footer>
-        <nav class="nav_buttons" id="navbar_footer">
+    <footer id="shopping_bag_footer">
+        <nav class="navbar_bag">
             <button id="shopping_bag__footer__button" ><img src="./img/shopping_bag.png" alt="lista de compra">lista de compras</button>
-            <hr class="footer_slash">
-            <ul id="shopping_bag"></ul>
-            <hr class="footer_slash">
-            <p id="total_price">Total: R$ 200,00</p>
-            <button id="finish_order">finalizar pedido</button>
+            <hr class="bag_slash">
+            <ul class="shopping_bag"></ul>
+            <hr class="bag_slash">
+            <p class="total_price">Total: </p>
+            <button class="finish_order">finalizar pedido</button>
         </nav>
     </footer>
 </body>

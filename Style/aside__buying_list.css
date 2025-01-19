@@ -1,9 +1,15 @@
 #shopping_bag__aside {
+    display: none;
     position: fixed;
     height: 80vh;
-    width: 50vw;
-    inset: auto auto auto 1vw;
+    width: 25vw;
+    inset: 10vh auto auto -25vw;
     background-color: var(--bg-box-color);
+    padding: 1rem 50px;
+    transition: left 0.5s ease;
+}
+#shopping_bag__aside.expanded {
+    left: 0.5vw;
 }
 
 #shopping_bag__aside__button {
@@ -13,4 +19,9 @@
     border-radius: 16px;
     padding-bottom: 0.8rem;
     padding-top: 0.2rem;
+}
+@media screen and (min-width: 786px) {
+    #shopping_bag__aside {
+        display: block;
+    }
 }

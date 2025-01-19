@@ -1,13 +1,13 @@
 import api from './api.js';
 
 const ui = {
-    toggleShoppingBag: function() {
-        document.querySelector('#shopping_bag__footer__button').addEventListener('click', function() {
-            var footer = document.querySelector('footer')
-            footer.classList.toggle('expanded')
+    toggleShoppingBag( button_id, container_id) {
+        document.getElementById(button_id).addEventListener('click', function() {
+            var container = document.getElementById(container_id)
+            container.classList.toggle('expanded')
         })
     },
-    rederizeProducts: async function() {
+    async rederizeProducts() {
         const menu = await api.getMenu()
         const menuList = document.querySelector('#list')
         menuList.innerHTML = ''
@@ -27,22 +27,24 @@ const ui = {
             const buy_button = document.createElement('button');
             buy_button.textContent = `adicionar por ${brlformat(product.price)}`;
             buy_button.addEventListener('click', function() {
-                const shopping_bag = document.querySelector('#shopping_bag');
-                const buying_item = document.createElement('li');
-
-                const item_name = document.createElement('p');
-                item_name.classList = "item_name";
-                item_name.textContent = product.name;
-
-                const item_price = document.createElement('p');
-                item_price.classList = "item_price";
-                item_price.textContent = brlformat(product.price);
-
-                const slash_dotts = document.createElement('hr')
-                slash_dotts.classList = "item_dots";
-
-                buying_item.append(item_name, slash_dotts, item_price);
-                shopping_bag.appendChild(buying_item);
+                const shopping_bag = document.querySelectorAll('.shopping_bag');
+                shopping_bag.forEach(shopping_bag => {
+                    const buying_item = document.createElement('li');
+                    
+                    const item_name = document.createElement('p');
+                    item_name.classList = "item_name";
+                    item_name.textContent = product.name;
+                    
+                    const item_price = document.createElement('p');
+                    item_price.classList = "item_price";
+                    item_price.textContent = brlformat(product.price);
+                    
+                    const slash_dotts = document.createElement('hr')
+                    slash_dotts.classList = "item_dots";
+                    
+                    buying_item.append(item_name, slash_dotts, item_price);
+                    shopping_bag.appendChild(buying_item);
+                })
             });
 
             const show_description = document.createElement('button');
@@ -54,6 +56,9 @@ const ui = {
             li.append(image, dish_name, button_container );
             menuList.appendChild(li);
         })
+    },
+    totalPrice() {
+
     }
 }
 export default ui

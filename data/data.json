@@ -20,6 +20,34 @@
             "img": "Coca_Cola.jpeg",
             "description": "coca-cola em lata de 350ml",
             "type": "bebida"
+        },
+        {
+            "name": "pizza portuguesa",
+            "price": 28.9,
+            "img": "pizza_portuguesa.png",
+            "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
+            "type": "pizza"
+        },
+        {
+            "name": "pizza portuguesa",
+            "price": 28.9,
+            "img": "pizza_portuguesa.png",
+            "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
+            "type": "pizza"
+        },
+        {
+            "name": "pizza portuguesa",
+            "price": 28.9,
+            "img": "pizza_portuguesa.png",
+            "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
+            "type": "pizza"
+        },
+        {
+            "name": "pizza portuguesa",
+            "price": 28.75,
+            "img": "pizza_portuguesa.png",
+            "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
+            "type": "pizza"
         }
     ]
 }
