@@ -1,8 +1,11 @@
 footer {
     position:fixed;
     top: 94%;
+    right: 50%;
+    transform: translate(50%, 0);
     background-color: var(--bg-box-color);
     width: 100%;
+    max-width: 450px;
     height: 80%;
     padding: 14px 22px;
     border-radius: 16px;

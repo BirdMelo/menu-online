@@ -5,49 +5,49 @@
             "price": 30.0,
             "img": "pizza_napolitana.png",
             "description": "pizza de massa napolitana. Sua cobertura é molho de tomate, queijo mussarela e folhas de oregano",
-            "type": "pizza"
+            "type": ["pizza","destaque"]
         },
         {
             "name": "pizza portuguesa",
             "price": 28.9,
             "img": "pizza_portuguesa.png",
             "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
-            "type": "pizza"
+            "type": ["pizza","destaque"]
         },
         {
             "name": "coca-cola",
             "price": 8.0,
             "img": "Coca_Cola.jpeg",
             "description": "coca-cola em lata de 350ml",
-            "type": "bebida"
+            "type": ["bebida","destaque"]
         },
         {
             "name": "pizza portuguesa",
             "price": 28.9,
             "img": "pizza_portuguesa.png",
             "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
-            "type": "pizza"
+            "type": ["pizza"]
         },
         {
             "name": "pizza portuguesa",
             "price": 28.9,
             "img": "pizza_portuguesa.png",
             "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
-            "type": "pizza"
+            "type": ["pizza"]
         },
         {
             "name": "pizza portuguesa",
             "price": 28.9,
             "img": "pizza_portuguesa.png",
             "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
-            "type": "pizza"
+            "type": ["pizza"]
         },
         {
             "name": "pizza portuguesa",
             "price": 28.75,
             "img": "pizza_portuguesa.png",
             "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
-            "type": "pizza"
+            "type": ["pizza"]
         }
     ]
 }

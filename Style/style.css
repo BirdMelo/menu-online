@@ -36,6 +36,14 @@ button {
     display: flex;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
+}
+.shopping_tab {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
 }
 .shopping_bag {
     display: flex;

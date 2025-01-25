@@ -42,9 +42,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 5px;
+    max-width: 373px;
 }
 .products ul li img {
-    max-height: 260px;
+    max-height: 238px;
     max-width: 100%;
 }
 #dish_name {
@@ -70,6 +72,7 @@ main {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1rem;
         margin: 0.5rem 10vw;
+        align-items: center;
     }
     .products ul li {
         justify-content: space-between;
