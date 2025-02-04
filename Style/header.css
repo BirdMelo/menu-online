@@ -8,19 +8,14 @@ header {
     width: 100%;
     border-radius: 0 0 16px 16px;
 }
+.management_button_header {
+    display: none;
+    position: absolute;
+    inset: 10px auto auto 15px;
+}
 #search {
     display: flex;
     position: relative;
-}
-#search_snack {
-    background-color: var(--bg-body-color);
-    border: 1px solid var(--borders-color);
-    padding: 0.1rem 0.5rem;
-    padding-right: 1.3rem;
-    border-radius: 4px;
-    width: 300px;
-    font-size: 1rem;
-
 }
 #search img {
     width: 1.2rem;
@@ -31,5 +26,8 @@ header {
 @media screen and (min-width: 786px) {
     header {
         position: inherit;
+    }
+    .management_button_header {
+        display: block;
     }
 }

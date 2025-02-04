@@ -44,6 +44,7 @@ main {
     align-items: center;
     gap: 5px;
     max-width: 373px;
+    height: 100%;
 }
 .products ul li img {
     max-height: 238px;
@@ -65,6 +66,15 @@ main {
     display: flex;
     width: 100%;
     justify-content: space-around;
+}
+#add_new_item {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    margin: auto 0;
+}
+#add_new_item img {
+    width: 100%;
 }
 @media screen and (min-width: 786px) {
     .products ul {

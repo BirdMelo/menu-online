@@ -2,8 +2,9 @@
 
 @import url('./header.css');
 @import url('./main.css');
-@import url('./aside__buying_list.css');
+@import url('./aside__shopping_list.css');
 @import url('./footer.css');
+@import url('./manage_acess.css');
 
 :root {
     --standart-font: Arial, sans-serif;
@@ -78,6 +79,27 @@ button {
 .finish_order {
     position: absolute;
     inset: auto auto 15px auto;
+}
+
+#bg_blur {
+    display: block;
+    position: absolute;
+    background-color: #00000050;
+    backdrop-filter: blur(1.5px);
+    inset: 0 0 0 0;
+    z-index: 2;
+}
+.input {
+    background-color: var(--bg-body-color);
+    border: 1px solid var(--borders-color);
+    padding: 0.1rem 0.5rem;
+    padding-right: 1.3rem;
+    border-radius: 4px;
+    width: 300px;
+    font-size: 1rem;
+}
+.hidden {
+    display: none !important;
 }
 
 @media screen and (min-width: 786px) {

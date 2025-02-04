@@ -22,30 +22,9 @@
             "type": ["bebida","destaque"]
         },
         {
-            "name": "pizza portuguesa",
-            "price": 28.9,
-            "img": "pizza_portuguesa.png",
-            "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
-            "type": ["pizza"]
-        },
-        {
-            "name": "pizza portuguesa",
-            "price": 28.9,
-            "img": "pizza_portuguesa.png",
-            "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
-            "type": ["pizza"]
-        },
-        {
-            "name": "pizza portuguesa",
-            "price": 28.9,
-            "img": "pizza_portuguesa.png",
-            "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
-            "type": ["pizza"]
-        },
-        {
-            "name": "pizza portuguesa",
-            "price": 28.75,
-            "img": "pizza_portuguesa.png",
+            "name": "pizza de frango com catupiry",
+            "price": 30,
+            "img": "pizza_de_frango_com_catupiry.webp",
             "description": "pizza de massa fina, borda alta e crocante. recheado com queijo, cebola, pimentão, ovo cozido, calabresa",
             "type": ["pizza"]
         }

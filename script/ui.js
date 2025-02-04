@@ -2,6 +2,7 @@ import api from './api.js';
 import bag from './shopping_bag__storage.js';
 
 let total_price = 0;
+const blur = document.getElementById('bg_blur');
 
 const ui = {
     navbar_buttons() {
@@ -50,6 +51,14 @@ const ui = {
         })
         toggleShoppingBag('shopping_bag__footer__button', 'shopping_bag_footer');
         toggleShoppingBag('shopping_bag__aside__button', 'shopping_bag__aside');
+    },
+    manageArea() {
+        const manage_button = document.querySelector('.manage')
+        manage_button.addEventListener('click', ()=> {
+            alert('o popup a seguir é apenas demonstrativo, não existe um login registrado.');
+            toggle_hidden(blur);
+            manage_login();
+        });
     }
 }
 export default ui;
@@ -133,7 +142,91 @@ async function rederizeProducts(typefilte, text) {
 
         button_container.append(buy_button, show_description);
 
-        li.append(image, dish_name, button_container );
+        li.append(image, dish_name, button_container);
         menuList.appendChild(li);
     })
+    const new_item = document.createElement('li');
+    new_item.classList.add('hidden');
+    const new_item__button = document.createElement('button');
+    new_item__button.id = 'add_new_item';
+    const new_item__img = document.createElement('img');
+    new_item__img.src = '../img/new_window.svg';
+    new_item__img.alt = 'adicionar item';
+    new_item__button.append(new_item__img);
+    new_item.append(new_item__button);
+    menuList.appendChild(new_item);
+}
+function manage_login() {
+    const body = document.body;
+
+    const form = document.createElement('form');
+    form.classList.add('manager_login');
+
+    const form_title = document.createElement('h3');
+    form_title.textContent = 'acesso da gerencia';
+
+    const email_label = buildin_label('email', 'email');
+    const password_label = buildin_label('senha', 'password');
+
+    const button_container = document.createElement('div');
+    button_container.classList.add('manager_login__button_container');
+
+    const cancel_button = document.createElement('button');
+    cancel_button.textContent = 'cancelar';
+    cancel_button.id = 'manager_login__button_cancel'
+    cancel_button.addEventListener('click', ()=> {
+        email_label.textContent = '';
+        password_label.textContent = '';
+        body.removeChild(form);
+        toggle_hidden(blur);
+    });
+
+    const button_enter = document.createElement('button');
+    button_enter.textContent = 'entrar';
+    button_enter.id = 'manager_login__button_enter';
+    button_enter.addEventListener('click', (event)=> {
+        event.preventDefault();
+        const email = document.getElementById('manager_login__email__input');
+        const password = document.getElementById('manager_login__password__input');
+        const email_regex = /^[^\s]+@[^\s]+\..*[^\s]{2}$/;
+        const password_regex = /^(?=[^\s])(?=.*[A-Z])(?=.*[1-9])(?=.*[\W]).{6,}$/;
+        const validate_login = email_regex.test(email.value) && password_regex.test(password.value) ? true : false;
+
+        if (validate_login) {
+            console.log(`email: ${email.value} password: ${password.value}`);
+            email.value = '';
+            password.value = '';
+            body.removeChild(form);
+            toggle_hidden(blur);
+        }else {
+            console.log('email ou senha invalidos');
+        }
+
+    });
+
+    button_container.append(cancel_button, button_enter);
+
+    form.append(form_title, email_label, password_label, button_container);
+    body.appendChild(form);
+}
+
+function buildin_label(labelName, inputType) {
+    const label = document.createElement('label');
+    label.for = `manager_login__${inputType}__input`;
+    label.classList.add(`manager_login__${inputType}`);
+
+    const label_text = document.createElement('p');
+    label_text.textContent = `${labelName}:`;
+
+    const input = document.createElement('input');
+    input.type = inputType;
+    input.classList.add('input');
+    input.id = `manager_login__${inputType}__input`;
+
+    label.append(label_text, input);
+
+    return label;
+}
+function toggle_hidden(item) {
+    item.classList.toggle('hidden');
 }
