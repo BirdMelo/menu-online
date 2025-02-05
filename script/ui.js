@@ -53,11 +53,12 @@ const ui = {
         toggleShoppingBag('shopping_bag__aside__button', 'shopping_bag__aside');
     },
     manageArea() {
-        const manage_button = document.querySelector('.manage')
+        const manage_button = document.querySelector('#manage')
         manage_button.addEventListener('click', ()=> {
             alert('o popup a seguir é apenas demonstrativo, não existe um login registrado.');
             toggle_hidden(blur);
             manage_login();
+            manage_logout();
         });
     }
 }
@@ -165,8 +166,16 @@ function manage_login() {
     const form_title = document.createElement('h3');
     form_title.textContent = 'acesso da gerencia';
 
-    const email_label = buildin_label('email', 'email');
-    const password_label = buildin_label('senha', 'password');
+    const email_label = buildin_label(
+        'email',
+        'email',
+        'formatação de email invalida'
+    );
+    const password_label = buildin_label(
+        'senha', 
+        'password',
+        'senha deve conter ao menos 6 caracteres, um número, uma letra maiúscula e um caractere especial'
+    );
 
     const button_container = document.createElement('div');
     button_container.classList.add('manager_login__button_container');
@@ -186,20 +195,39 @@ function manage_login() {
     button_enter.id = 'manager_login__button_enter';
     button_enter.addEventListener('click', (event)=> {
         event.preventDefault();
+        
         const email = document.getElementById('manager_login__email__input');
         const password = document.getElementById('manager_login__password__input');
         const email_regex = /^[^\s]+@[^\s]+\..*[^\s]{2}$/;
         const password_regex = /^(?=[^\s])(?=.*[A-Z])(?=.*[1-9])(?=.*[\W]).{6,}$/;
-        const validate_login = email_regex.test(email.value) && password_regex.test(password.value) ? true : false;
+        const validate_email = email_regex.test(email.value) ? true : false;
+        const validate_password = password_regex.test(password.value) ? true : false;
+        const email_error = document.querySelector('.manager_login__email .longin_error');
+        const password_error = document.querySelector('.manager_login__password .longin_error');
 
-        if (validate_login) {
-            console.log(`email: ${email.value} password: ${password.value}`);
+        if (!validate_email) {
+            email_error.classList.remove('hidden');
+        }else {
+            email_error.classList.add('hidden');
+        }
+        if (!validate_password) {
+            password_error.classList.remove('hidden');
+        } else {
+            password_error.classList.add('hidden');
+        }
+        if (validate_email && validate_password) {
             email.value = '';
             password.value = '';
             body.removeChild(form);
             toggle_hidden(blur);
-        }else {
-            console.log('email ou senha invalidos');
+            const add_item = document.querySelector('#list li:last-child');
+            toggle_hidden(add_item);
+            const manage_button = document.querySelector('#manage');
+            toggle_hidden(manage_button);
+            const manage_logout = document.getElementById('logout');
+            toggle_hidden(manage_logout);
+            email_error.classList.add('hidden');
+            password_error.classList.add('hidden');
         }
 
     });
@@ -209,8 +237,18 @@ function manage_login() {
     form.append(form_title, email_label, password_label, button_container);
     body.appendChild(form);
 }
+function manage_logout() {
+    const manage_logout = document.getElementById('logout');
+    manage_logout.addEventListener('click', ()=> {
+        const add_item = document.querySelector('#list li:last-child');
+        toggle_hidden(add_item);
+        const manage_button = document.querySelector('#manage');
+        toggle_hidden(manage_button);
+        toggle_hidden(manage_logout);
+    });
+}
 
-function buildin_label(labelName, inputType) {
+function buildin_label(labelName, inputType, errorText) {
     const label = document.createElement('label');
     label.for = `manager_login__${inputType}__input`;
     label.classList.add(`manager_login__${inputType}`);
@@ -223,7 +261,12 @@ function buildin_label(labelName, inputType) {
     input.classList.add('input');
     input.id = `manager_login__${inputType}__input`;
 
-    label.append(label_text, input);
+    const error = document.createElement('p');
+    error.classList.add('longin_error');
+    error.classList.add('hidden');
+    error.textContent = `*${errorText}`;
+
+    label.append(label_text, input, error);
 
     return label;
 }

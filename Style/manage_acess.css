@@ -25,3 +25,8 @@
     display: flex;
     justify-content: space-between;
 }
+.longin_error {
+    color: red;
+    font-size: 0.7rem;
+    width: 300px;
+}
