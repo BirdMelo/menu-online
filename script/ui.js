@@ -6,7 +6,7 @@ const blur = document.getElementById('bg_blur');
 
 const ui = {
     navbar_buttons() {
-        let typefilte = 'Destaques';
+        let typeFilter = 'Destaques';
 
         const search_input = document.getElementById('search_snack');
         const highlights_button = document.getElementById('highlights');
@@ -15,31 +15,31 @@ const ui = {
         const all_button = document.getElementById('all');
 
         highlights_button.classList.add('active');
-        rederizeProducts('destaque');
+        renderizeProducts('destaque');
 
         search_input.addEventListener('input', ()=> {
-            typefilte = navbar_buttons_actions('pesquisado');
-            rederizeProducts(typefilte, search_input.value);
+            typeFilter = navbar_buttons_actions('pesquisado');
+            renderizeProducts(typeFilter, search_input.value);
         });
 
         highlights_button.addEventListener('click', ()=> {
-            typefilte = navbar_buttons_actions('destaque');
-            rederizeProducts(typefilte);
+            typeFilter = navbar_buttons_actions('destaque');
+            renderizeProducts(typeFilter);
         });
 
         pizzas_button.addEventListener('click', ()=> {
-            typefilte = navbar_buttons_actions('pizza');
-            rederizeProducts(typefilte);
+            typeFilter = navbar_buttons_actions('pizza');
+            renderizeProducts(typeFilter);
         });
 
         beverages_button.addEventListener('click', ()=> {
-            typefilte = navbar_buttons_actions('bebida');
-            rederizeProducts(typefilte);
+            typeFilter = navbar_buttons_actions('bebida');
+            renderizeProducts(typeFilter);
         });
 
         all_button.addEventListener('click', ()=> {
-            typefilte = navbar_buttons_actions('todo');
-            rederizeProducts();
+            typeFilter = navbar_buttons_actions('todo');
+            renderizeProducts();
         });
     },
     bag_tab() {
@@ -73,15 +73,15 @@ function add_item_bag(item) {
         const buying_item = document.createElement('li');
         
         const item_name = document.createElement('p');
-        item_name.classList = "item_name";
+        item_name.classList.add('item_name');
         item_name.textContent = item.name;
         
         const item_price = document.createElement('p');
-        item_price.classList = "item_price";
+        item_price.classList.add('item_price');
         item_price.textContent = brlformat(item.price);
         
         const slash_dotts = document.createElement('hr');
-        slash_dotts.classList = "item_dots";
+        slash_dotts.classList.add('item_dots');
         
         buying_item.append(item_name, slash_dotts, item_price);
         shopping_tab.appendChild(buying_item);
@@ -103,13 +103,13 @@ function navbar_buttons_actions(type) {
     list_title.textContent = `${type.charAt(0).toUpperCase()}${type.slice(1)}s`;
     return type;
 }
-async function rederizeProducts(typefilte, text) {
+async function renderizeProducts(typeFilter, text) {
     const menu = await api.getMenu();
     let menuFiltered = menu;
-    if (typefilte) {
-        menuFiltered = menu.filter(product => product.type.includes(typefilte));
+    if (typeFilter) {
+        menuFiltered = menu.filter(product => product.type.includes(typeFilter));
     }
-    if (typefilte === 'pesquisado') {
+    if (typeFilter === 'pesquisado') {
         menuFiltered = menu.filter(product => product.name.toLowerCase().includes(text.toLowerCase()));
     }
     const menuList = document.querySelector('#list');
@@ -125,7 +125,7 @@ async function rederizeProducts(typefilte, text) {
         dish_name.textContent = product.name;
 
         const button_container = document.createElement('div');
-        button_container.classList = 'button_product_container';
+        button_container.classList.add('button_product_container');
 
         const buy_button = document.createElement('button');
         buy_button.textContent = `adicionar por ${brlformat(product.price)}`;
